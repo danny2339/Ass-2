@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null, configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container" >
+                <div style="text-align: center;"  >
+                    <audio controls autoplay loop hidden="true">
+                        <source src="/audio/clsmusic.mp3"  type="audio/mpeg">          
+                    </audio>
+                </div>
+
+                <H3> Create a NEW USER: </H3>
+		
+                <form action="/user/create" method="GET">
+                    <div class="form-group">
+                        <label for="username">Email address</label>
+                        <input type="email" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">retype-Password</label>
+                        <input type="password" class="form-control" id="repassword" name="repassword">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create ONE user !</button>
+                </form>
+            </div>
+        </main>
+        <notify>
+            <div class="container" >
+                <%=Notify%>
+            </div>            
+        </notify>
+          
+        
+        <%- include ('../template/footer'); %>
+        
+
+    </body>
+
+</html> 

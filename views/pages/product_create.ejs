@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null, configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container" >
+                
+
+                <H3> Create a NEW PRODUCT: </H3>
+		
+                <form action="/product/create" enctype="multipart/form-data" method="post">
+
+                    <!-- id -->
+                    <div class="form-group">
+                        <label for="id">id</label>
+                        <input type="text" class="form-control" id="id" name="id" aria-describedby="idHelp">
+                        <small id="idHelp" class="form-text text-muted"> </small>
+                    </div>
+
+                    <!-- name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+                        <small id="nameHelp" class="form-text text-muted"></small>
+                    </div>
+
+                    <!-- price -->
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" name="price" aria-describedby="priceHelp">
+                        <small id="priceHelp" class="form-text text-muted"> price </small>
+                    </div>
+
+                    <!-- information -->
+                    <div class="form-group">
+                        <label for="information">Information </label>
+                        <input type="text" class="form-control" id="information" name="information" aria-describedby="informationHelp">
+                        <small id="informationHelp" class="form-text text-muted">Information </small>
+                    </div>
+
+                    <!-- img -->
+                    <div class="form-group">
+                        <label for="img">Image</label>
+                        <input type="file"  accept="image/*" class="form-control" id="img" name="img" aria-describedby="imgHelp" multiple  >
+                        <small id="imgHelp" class="form-text text-muted"> img </small>
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-primary">Create ONE product !</button>
+                </form>
+            </div>
+            <BR>
+            <BR>
+        </main>
+        <notify>
+            <div class="container" >
+                <%=Notify%>
+            </div>            
+        </notify>
+          
+        
+        <%- include ('../template/footer'); %>
+        
+
+    </body>
+
+</html> 

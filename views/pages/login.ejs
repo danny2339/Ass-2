@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null , configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container" >
+                <div style="text-align: center;"  >
+                    <img src="/images/Logo-Greenwich.png" />
+            
+                    <audio controls autoplay loop hidden="true">
+                        <source src="/audio/clsmusic.mp3"  type="audio/mpeg">          
+                    </audio>
+                </div>
+		
+                <form action="" method="GET">
+                    <div class="form-group">
+                    <label for="username">Email address</label>
+                    <input type="email" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+        
+
+    </body>
+
+</html> 

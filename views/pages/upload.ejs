@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: "Upload" } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null , configHeader:configHeader, currpage : currpage }); %>
+        </header>
+
+        <main>
+            
+            <div class="container" >
+                <H3>Upload</H3>
+                
+                <form action="/upload/multiple" enctype="multipart/form-data"  method="POST">
+                    <div class="form-group">                        
+                        <div class="custom-file">
+                            <input type="file" id="upfiles"  name="upfiles"  class="custom-file-input" multiple  accept="image/*" />
+                            <label class="custom-file-label" for="upfiles">Choose file</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Upload ! </button>
+
+                </form>
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+
+
+    </body>
+
+    <script>
+        // $('.file-upload').file_upload();
+        function xsubmit() {
+            $('.file-upload').file_upload();
+        }
+
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+
+</html> 

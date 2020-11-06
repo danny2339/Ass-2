@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null, configHeader: configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container"  >
+                <form action="" method="GET">
+                    <div class="form-group">
+                        <label for="message">new message</label>
+                        <input type="text" class="form-control" id="message" name="message" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Msg</button>
+                </form>
+                <BR>
+                <H3>Mesg:</H3>
+                <BR>
+                <div class="table-responsive-lg table-striped  w-auto">
+                    <div class="row" style="vertical-align:middle;align-items:center;font-weight: bold;">
+                        <div class="col-sm-1">#Time</div>
+                        <div class="col-sm-5">Nick</div>
+                        <div class="col-sm-6">Thông điệp</div>                        
+                    </div>  
+
+                  <%Object.keys(itemlist).forEach(function(item) { %>
+                    <div class="row" style="vertical-align:middle;align-items: center ;">
+                        <div class="col-sm-1"><%=itemlist[item].time%></div>
+                        <div class="col-sm-5"><%=itemlist[item].name%></div>
+                        <div class="col-sm-6"><%=itemlist[item].message%></div>
+                    </div>                   
+                  <% }); %>
+                </div>
+
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+
+
+    </body>
+
+</html> 

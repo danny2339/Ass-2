@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: "Notify" } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null , configHeader:configHeader, currpage : currpage }); %>
+        </header>
+
+        <main>
+            <div class="container" style="text-align: center;" >
+                <%-Notify%>
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+
+
+    </body>
+
+</html> 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title  } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: username , configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container" >
+                <div class="jumbotron">
+                    <h1>ATN Shop</h1>
+                    <p>ATN is a Vietnamese company which is selling toys to teenagers in many provinces all over Vietnam. The company has the revenue over 500.000 dollars/year. Currently each shop has its own database to store transactions for that shop only. Each shop has to send the sale data to the board director monthly and the board director need lots of time to summarize the data collected from all the shops. Besides the board can’t see the stock information update in real time.</p>
+                    <p>The table of contents in your technical report should be as follows: 
+                        <BR>1.	Explain to the board director the fundamentals of cloud computing and how it is popular nowadays(500 words) 
+                        <BR>2.	Persuade the board director to use Cloud Computing in ATN(300 words)
+                        <BR>3.	Proposed solution (higher level solution description – around 200 words).
+                        <BR>4.	Explain the appropriateness of the solution for the scenario (350 words with images and diagrams).
+                        <BR>5.	Architectural design (architectural diagram and description).
+                        <BR>6.	Detailed design
+                    </p>
+
+                    <p>
+                      <a class="btn btn-lg btn-primary" href="/product" role="button">View Catalog »</a>
+                    </p>
+                  </div>
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+        
+
+    </body>
+
+</html> 

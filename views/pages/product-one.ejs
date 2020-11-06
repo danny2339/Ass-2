@@ -1,0 +1,14 @@
+<div class="col-sm-4">
+    <div class="card" style="width: 18rem; ">
+        <div>
+            <img class="card-img-top center" style="max-width:200px;max-height:200px;" src="/images/prd-<%=product.id%>.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+        <h5 class="card-title"><%=product.id%> : <%=product.name%></h5>
+        <p class="card-text">Price: <%=product.price%> </p>
+        <p class="card-text">Information: <%=product.information%> </p>
+        <a href="/product/<%=product.id%>" class="btn btn-primary">view details - <%=product.id%></a>
+        <button type="submit" class="btn btn-success" onclick="add_to_cart('<%=product.id%>' , '<%=product.name%>')"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+    </div>
+</div>

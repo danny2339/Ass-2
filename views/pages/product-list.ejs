@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null, configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container" style="text-align: center;" >
+                <div class="row">
+                    <%products.forEach(function(product) { %>
+                        <%- include('product-one', {product: product}); %>
+                    <% }); %>
+                </div>
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+
+
+    </body>
+
+    <script>
+        var itemlist = {};
+        var soluong = 0;
+
+        function add_to_cart(iditem, nameitem) {
+            
+            if (iditem in itemlist) {
+                itemlist[iditem].number++;
+            } else {
+                itemlist[iditem] = {
+                    id: iditem,
+                    name: nameitem,
+                    number: 1,
+                };
+            }
+            soluong++;
+            alert("Bạn mới thêm món hàng: \n" + iditem + " : \n" + nameitem 
+                + "\n Số lượng : \n" + itemlist[iditem].number);
+            
+            ///
+            var objCart = document.getElementById("numberItems");
+            objCart.textContent = "" + Object.keys(itemlist).length + " , " + soluong;
+
+            //var cartcookie = btoa(unescape(encodeURIComponent(JSON.stringify(itemlist))));
+            var cartcookie = JSON.stringify(itemlist);
+            console.log("\n\t\t Json - ", cartcookie);
+            cartcookie = encodeURIComponent(cartcookie);
+            console.log("\n\t\t encodeURIComponent - ", cartcookie);
+            cartcookie = unescape(cartcookie);
+            console.log("\n\t\t unescape - ", cartcookie);
+            cartcookie = btoa(cartcookie);
+            console.log("\n\t\t btoa - ", cartcookie);
+            ///
+            document.cookie = "cart_itemlist=" + cartcookie + ";";
+        }
+    </script>
+
+</html> 

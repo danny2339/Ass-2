@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title } ); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include ('../template/header', { username: null, configHeader: configHeader, currpage : currpage  }); %>
+        </header>
+
+        <main>
+            <div class="container"  >
+                <H3>Các hàng hóa có trong giỏ hàng:</H3>
+                <BR>
+                <div class="table-responsive-lg table-striped  w-auto">
+                    <div class="row" style="vertical-align:middle;align-items:center;font-weight: bold;">
+                        <div class="col-sm-1">#Mã</div>
+                        <div class="col-sm-2"> 
+                            Hình ảnh
+                        </div>
+                        <div class="col-sm-5">Tên sản phẩm</div>
+                        <div class="col-sm-2">Số lượng</div>
+                        <div class="col-sm-2">Giá tiền</div>
+                        
+                    </div>  
+
+                  <%Object.keys(itemlist).forEach(function(item) { %>
+                    <div class="row" style="vertical-align:middle;align-items: center ;">
+                        <div class="col-sm-1"><%=itemlist[item].id%></div>
+                        <div class="col-sm-2"> 
+                            <img class="card-img-top center" style="max-width:60px;max-height:60px;" src="/images/prd-<%=itemlist[item].id%>.jpg" alt="Card image cap">
+                        </div>
+                        <div class="col-sm-5"><%=itemlist[item].name%></div>
+                        <div class="col-sm-2"><%=itemlist[item].number%></div>
+                        <div class="col-sm-2"> </div>
+                        
+                    </div>                   
+                  <% }); %>
+                </div>
+
+            </div>
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+
+
+    </body>
+
+</html> 
